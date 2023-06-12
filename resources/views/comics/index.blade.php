@@ -10,6 +10,7 @@
         <th scope="col">Type</th>
         <th scope="col">Sale Date</th>
         <th scope="col">Price</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +22,7 @@
           <td>{{ $comic->type }}</td>
           <td>{{ $comic->sale_date }}</td>
           <td>{{ $comic->price }}</td>
+          <td><button class="btn btn-info">VIEW</button></td>
         </tr>
       @endforeach
     </tbody>
