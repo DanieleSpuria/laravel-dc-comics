@@ -1,6 +1,9 @@
 @extends('layout.main')
 
 @section('content')
+  @if (session('message'))
+    <span class="text-center border border-warning">{{ session('message') }}</span>
+  @endif
   <table class="table table-hover">
     <thead>
       <tr>
