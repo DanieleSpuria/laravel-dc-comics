@@ -73,9 +73,11 @@ class ComicController extends Controller
      * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic)
+    public function update(ComicRequest $request, Comic $comic)
     {
-      return redirect()->view('comics.show');
+      $form_data = $request->all();
+      $comic->update($form_data);
+      return redirect()->route('comics.show', $comic);
     }
 
     /**
