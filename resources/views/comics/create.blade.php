@@ -2,38 +2,39 @@
 
 @section('content')
   <div class="container my-5">
-    <form>
+    <form action="{{ route('comics.store') }}" method="POST">
+      @csrf
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Title</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp">
       </div>
       <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Series</label>
-        <input type="text" class="form-control" id="exampleInputPassword1">
+        <label for="series" class="form-label">Series</label>
+        <input type="text" class="form-control" id="series"name="series">
       </div>
       <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Price</label>
-        <input type="text" class="form-control" id="exampleInputPassword1">
+        <label for="price" class="form-label">Price</label>
+        <input type="text" class="form-control" id="price"name="price">
       </div>
       <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Sale Date</label>
-        <input type="text" class="form-control" id="exampleInputPassword1">
+        <label for="sale_date" class="form-label">Sale Date</label>
+        <input type="text" class="form-control" id="sale_date"name="sale_date">
       </div>
       <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Type</label>
-        <input type="text" class="form-control" id="exampleInputPassword1">
+        <label for="type" class="form-label">Type</label>
+        <input type="text" class="form-control" id="type" name="type">
       </div>
       <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Artists</label>
-        <input type="text" class="form-control" id="exampleInputPassword1">
+        <label for="artists" class="form-label">Artists</label>
+        <input type="text" class="form-control" id="artists" name="artists">
       </div>
       <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Writers</label>
-        <input type="text" class="form-control" id="exampleInputPassword1">
+        <label for="writers" class="form-label">Writers</label>
+        <input type="text" class="form-control" id="writers" name="writers">
       </div>
       <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Description</label>
-        <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" id="description" name="description" style="height: 100px"></textarea>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
