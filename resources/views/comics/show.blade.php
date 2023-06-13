@@ -19,6 +19,17 @@
             <span class="card-text"><strong>Description:</strong></span>
             <p class="card-text my-2">{{ $comic['description'] }}</p>
             <a href="{{ route('comics.index') }}" class="btn btn-primary my-4">Back</a>
+            <a href="{{ route('comics.edit', $comic) }}" class="btn btn-warning">Edit</a>
+            <form
+              class="d-inline"
+              action="{{ route('comics.destroy', $comic) }}"
+              method="POST"
+              onsubmit="return confirm('Confermi la cancellazione del dato?')"
+            >
+              @csrf
+              @method('DELETE')
+              <button class="btn btn-danger">Delete</button>
+            </form>
           </div>
         </div>
       </div>
