@@ -12,6 +12,7 @@
         <th scope="col">Price</th>
         <th scope="col"></th>
         <th scope="col"></th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -24,7 +25,18 @@
           <td>{{ $comic->sale_date }}</td>
           <td>{{ $comic->price }}</td>
           <td><a href="{{ route('comics.show', $comic) }}" class="btn btn-primary">View</a></td>
-          <td><a href="{{ route('comics.edit', $comic) }}" class="btn btn-danger">Edit</a></td>
+          <td><a href="{{ route('comics.edit', $comic) }}" class="btn btn-warning">Edit</a></td>
+          <td>
+            <form
+              action="{{ route('comics.destroy', $comic) }}"
+              method="POST"
+              onsubmit="return confirm('Confermi la cancellazione del dato?')"
+            >
+              @csrf
+              @method('DELETE')
+              <button class="btn btn-danger">Delete</button>
+            </form>
+        </td>
         </tr>
       @endforeach
     </tbody>
